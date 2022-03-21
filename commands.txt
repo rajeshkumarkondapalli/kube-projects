@@ -1,4 +1,14 @@
   
+  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"\n  
+  echo "$(<kubectl.sha256)  kubectl" | shasum -a 256 --checkchmod +x ./kubectl
+  echo $PATH
+  echo 'export PATH=~/bin:$PATH' >> ~/.zshrc
+  cat ~/.zshrc
+  
+  brew install minikube
+  547  minikube version
+  548  brew link minikube
+  
   code configs/namespace-dev1.yml
   kubectl apply -f configs/namespace-dev1.yml
   kubectl namespaces
@@ -11,3 +21,5 @@
   
   kubectl config set-context $(kubectl config current-context) --namespace=ns-dev1
   kubectl get pods
+  
+  kubectl config get-contexts 
