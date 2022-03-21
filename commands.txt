@@ -23,3 +23,7 @@
   kubectl get pods
   
   kubectl config get-contexts 
+  
+  
+  
+  kubectl delete --all pods --namespace=foo
